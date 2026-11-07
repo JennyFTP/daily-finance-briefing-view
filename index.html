@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0ea5e9">
+<title>2026-11-07 아침 금융브리핑</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* 팩토리팩 ERP 토큰 (src/index.css) 과 같은 값 */
+:root{color-scheme:light;--bg:hsl(210 20% 98%);--card:#fff;--muted:hsl(210 15% 93%);--muted-fg:hsl(220 10% 45%);--fg:hsl(220 25% 10%);--fg2:hsl(220 25% 25%);--border:hsl(210 20% 90%);
+ --primary:hsl(199 89% 48%);--primary-fg:#fff;--accent:hsl(199 70% 94%);--accent-fg:hsl(199 89% 35%);
+ --good:hsl(142 76% 36%);--warn:hsl(45 93% 40%);--crit:hsl(0 84% 60%);--good-bg:hsl(142 76% 36% / .10);--warn-bg:hsl(45 93% 47% / .14);--crit-bg:hsl(0 84% 60% / .08);
+ --shadow:0 1px 3px 0 hsl(220 25% 10% / .06),0 1px 2px -1px hsl(220 25% 10% / .06)}
+:root[data-theme=dark]{color-scheme:dark;--bg:hsl(220 25% 8%);--card:hsl(220 25% 12%);--muted:hsl(220 20% 20%);--muted-fg:hsl(210 15% 60%);--fg:hsl(210 20% 98%);--fg2:hsl(210 20% 90%);--border:hsl(220 20% 20%);
+ --accent:hsl(199 50% 20%);--accent-fg:hsl(199 89% 70%);--warn:hsl(45 93% 55%);--good:hsl(142 70% 50%);--crit:hsl(0 84% 65%);--good-bg:hsl(142 76% 36% / .18);--warn-bg:hsl(45 93% 47% / .18);--crit-bg:hsl(0 84% 60% / .15)}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font-family:'Pretendard Variable',Pretendard,system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 48px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.logo{width:32px;height:32px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:none}
+.top h1{font-size:20px;font-weight:700;margin:0;line-height:1.2}.top p{margin:0;font-size:13px;color:var(--muted-fg)}
+.top .r{margin-left:auto}
+.toggle{background:var(--card);border:1px solid var(--border);color:var(--muted-fg);border-radius:8px;padding:4px 9px;font-size:12px;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.card h2{font-size:14px;font-weight:600;margin:0 0 10px;color:var(--fg)}.card h2 small{font-weight:500;color:var(--muted-fg);margin-left:6px}
+.lab{font-size:13px;color:var(--muted-fg)}.val{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:var(--card)}
+.stat.lv0{border-color:hsl(142 76% 36% / .4);background:var(--good-bg)}.stat.lv1{border-color:hsl(45 93% 47% / .5);background:var(--warn-bg)}.stat.lv2{border-color:hsl(0 84% 60% / .5);background:var(--crit-bg)}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
+.badge.lv0{background:var(--good-bg);color:var(--good)}.badge.lv1{background:var(--warn-bg);color:var(--warn)}.badge.lv2{background:var(--crit-bg);color:var(--crit)}
+.layers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.layers div{background:var(--muted);border-radius:10px;padding:8px 10px}.layers b{display:block;font-size:12px;color:var(--muted-fg);font-weight:500}.layers span{font-size:13px;font-weight:600}
+.steps{display:flex;gap:6px;margin:4px 0 10px}
+.steps div{flex:1;text-align:center;border-radius:8px;padding:8px 2px;font-size:12px;background:var(--muted);color:var(--muted-fg);line-height:1.25}
+.steps div b{display:block;font-size:14px}
+.steps div.on{background:var(--primary);color:#fff;font-weight:600}
+.steps div.on.s3,.steps div.on.s4{background:var(--crit)}.steps div.on.s2,.steps div.on.s5{background:var(--good)}.steps div.on.s1{background:var(--warn)}
+.note{color:var(--muted-fg);font-size:13px}
+.alert{display:flex;gap:8px;background:var(--crit-bg);border:1px solid hsl(0 84% 60% / .4);color:var(--crit);border-radius:10px;padding:10px 12px;margin-top:10px;font-weight:600;font-size:14px}
+.alert small{display:block;font-weight:500;color:var(--fg2)}
+ul.plain{list-style:none;margin:0;padding:0}ul.plain li{padding:8px 0;border-top:1px solid var(--border);font-size:14px}ul.plain li:first-child{border-top:0;padding-top:0}ul.plain li:last-child{padding-bottom:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:1px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--card)}
+.tile:hover{background:var(--muted)}
+.tile .n{font-size:13px;color:var(--muted-fg)}.tile .n em{font-style:normal;color:var(--muted-fg);opacity:.75;font-size:11px;margin-left:4px}
+.tile .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin:2px 0 6px;line-height:1.2}
+.tile .s{font-size:12px;color:var(--muted-fg);margin-top:4px}
+.tile .d{display:none;margin-top:10px;font-size:13px;color:var(--fg2);border-top:1px solid var(--border);padding-top:10px;line-height:1.55}
+.tile.open{grid-column:1/-1}.tile.open .d{display:block}.tile .d b{color:var(--fg)}
+.chart{position:relative}.chart svg{width:100%;height:130px;display:block}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:12px;padding:4px 8px;border-radius:6px;transform:translate(-50%,-115%);white-space:nowrap;display:none}
+footer{color:var(--muted-fg);font-size:12px;padding:6px 2px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><div class="logo">FB</div><div><h1>아침 금융브리핑</h1><p id="date"></p></div><div class="r"><button class="toggle" onclick="toggleTheme()">다크/라이트</button></div></div>
+
+<section class="card">
+  <div class="stats">
+    <div class="stat" id="phase-card"><div class="lab">오늘 국면</div><div class="val" id="phase"></div></div>
+    <div class="stat"><div class="lab">위험 점수 (0~24)</div><div class="val"><span id="score"></span><span class="lab"> 점</span></div></div>
+  </div>
+  <div class="layers" id="layers"></div>
+  <div id="alerts"></div>
+</section>
+
+<section class="card">
+  <h2>유동성 단계</h2>
+  <div class="steps" id="steps"></div>
+  <div class="note" id="stage-note"></div>
+</section>
+
+<section class="card">
+  <h2>최근 30일 점수 (높을수록 경고에 가까움)</h2>
+  <div class="chart" id="chart"></div>
+</section>
+
+<section class="card">
+  <h2>어제와 달라진 것</h2>
+  <ul class="plain" id="changes"></ul>
+</section>
+
+<div id="sections"></div>
+
+<section class="card">
+  <h2>오늘 볼 것</h2>
+  <ul class="plain" id="watch"></ul>
+</section>
+
+<footer id="foot"></footer>
+</div>
+
+<script id="payload" type="application/json">{"data": {"run_date": "2026-11-07", "generated_at": "2026-11-07 10:43", "phase": "주의", "score": 10, "layer_labels": {"경기": "좋음+물가·금리 부담", "유동성": "빡빡", "심리": "공포"}, "layer_scores": {"경기": 3, "유동성": 4, "심리": 3}, "liquidity_stage": 3, "liquidity_note": "RRP 바닥 + 준비금 감소", "alerts": [], "changes": ["TGA 0.94조 → 0.92조 (-1.4%) (4주간 +353억 달러, 정상로 변경)", "VIX 16.6 → 28.2 (+69.7%) (하루 +69.7%, 경고로 변경)", "10Y 4.90% → 4.84% (4.75% 초과, 주의 유지)", "RRP 1.2억 → 1.5억 (+20.0%) (100억 달러 미만, 경고 유지)", "SOFR 3.94 → 3.92 (IORB 3.90% 초과, 주의 유지)"], "watch": ["가격지수 추가 상승 여부", "준비금 2.8조 하회 여부"], "signals": [{"key": "ism_pmi", "name": "ISM", "full": "ISM 제조업 PMI", "layer": "경기", "desc": "공장 경기, 50 위면 확장", "threshold": "50 미만 주의 · 48 미만 경고", "level": 0, "level_name": "정상", "value": 55.5, "display": "55.5", "date": "2026-10-01", "basis": "10월", "prev_value": 54.5, "prev_date": "2026-09-01", "note": "", "missing": false}, {"key": "ism_prices", "name": "가격", "full": "ISM 가격지수", "layer": "경기", "desc": "공장 원자재값 상승 = 물가 압력", "threshold": "70 초과 주의 · 75 초과 경고", "level": 2, "level_name": "경고", "value": 75.2, "display": "75.2", "date": "2026-10-01", "basis": "10월", "prev_value": 77.9, "prev_date": "2026-09-01", "note": "75 초과", "missing": false}, {"key": "t10y2y", "name": "10Y-2Y", "full": "10년-2년 금리차", "layer": "경기", "desc": "10년물-2년물 금리차, 음수(역전)면 침체 예고", "threshold": "0.2 미만 주의 · 0 미만 경고", "level": 0, "level_name": "정상", "value": 0.35, "display": "0.35", "date": "2026-11-06", "basis": "11/6", "prev_value": 0.38, "prev_date": "2026-11-05", "note": "", "missing": false}, {"key": "t10y3m", "name": "10Y-3M", "full": "10년-3개월 금리차", "layer": "경기", "desc": "10년물-3개월물 금리차, 연준이 더 중시", "threshold": "0.2 미만 주의 · 0 미만 경고", "level": 0, "level_name": "정상", "value": 0.67, "display": "0.67", "date": "2026-11-06", "basis": "11/6", "prev_value": 0.67, "prev_date": "2026-11-05", "note": "", "missing": false}, {"key": "dgs10", "name": "10Y", "full": "미 10년물 금리", "layer": "경기", "desc": "미 10년물 국채금리 = 장기 대출 비용", "threshold": "4.75 초과 주의 · 5 초과 경고", "level": 1, "level_name": "주의", "value": 4.84, "display": "4.84%", "date": "2026-11-05", "basis": "11/5", "prev_value": 4.9, "prev_date": "2026-11-04", "note": "4.75% 초과", "missing": false}, {"key": "tga", "name": "TGA", "full": "TGA(재무부 통장)", "layer": "유동성", "desc": "재무부 통장 잔고, 늘면 시장 돈을 빨아들임", "threshold": "4주간 +500억 주의 · +1,000억 경고", "level": 0, "level_name": "정상", "value": 922.752, "display": "0.92조", "date": "2026-11-05", "basis": "11/5", "prev_value": 936.248, "prev_date": "2026-11-04", "note": "4주간 +353억 달러", "missing": false}, {"key": "rrp", "name": "RRP", "full": "역레포(ON RRP)", "layer": "유동성", "desc": "역레포, 남는 돈 물탱크(충격 흡수)", "threshold": "1,000억 미만 주의 · 100억 미만 경고", "level": 2, "level_name": "경고", "value": 0.15, "display": "1.5억", "date": "2026-11-06", "basis": "11/6", "prev_value": 0.125, "prev_date": "2026-11-05", "note": "100억 달러 미만", "missing": false}, {"key": "reserves", "name": "준비금", "full": "은행 준비금", "layer": "유동성", "desc": "은행 준비금 = 실제 수영장 물", "threshold": "3.0조 미만 주의 · 2.8조 미만 경고", "level": 1, "level_name": "주의", "value": 2930.088, "display": "2.93조", "date": "2026-11-04", "basis": "11/4", "prev_value": 2893.77, "prev_date": "2026-10-28", "note": "3.0조 달러 미만", "missing": false}, {"key": "sofr", "name": "SOFR", "full": "SOFR", "layer": "유동성", "desc": "은행끼리 하룻밤 빌리는 이자, IORB 넘으면 돈이 빡빡", "threshold": "IORB 초과 주의 · 기준금리 상한 이상 3일 지속 경고", "level": 1, "level_name": "주의", "value": 3.92, "display": "3.92", "date": "2026-11-05", "basis": "11/5", "prev_value": 3.94, "prev_date": "2026-11-04", "note": "IORB 3.90% 초과", "missing": false}, {"key": "vix", "name": "VIX", "full": "VIX", "layer": "심리", "desc": "주식시장 공포지수", "threshold": "20 초과 주의 · 30 초과 또는 하루 +20% 경고", "level": 2, "level_name": "경고", "value": 28.18, "display": "28.2", "date": "2026-11-05", "basis": "11/5", "prev_value": 16.61, "prev_date": "2026-11-04", "note": "하루 +69.7%", "missing": false}, {"key": "hy_spread", "name": "HY", "full": "하이일드 스프레드", "layer": "심리", "desc": "투기등급 회사채에 더 받는 이자 = 부도 걱정", "threshold": "4% 초과 주의 · 5% 초과 또는 1개월 +1%p 경고", "level": 0, "level_name": "정상", "value": 3.48, "display": "3.48%", "date": "2026-11-05", "basis": "11/5", "prev_value": 3.32, "prev_date": "2026-11-04", "note": "", "missing": false}, {"key": "margin_debt", "name": "마진데트", "full": "마진데트", "layer": "심리", "desc": "빚내서 산 주식 총액", "threshold": "증가율 정점 후 하락 주의 · 금액 2개월 연속 감소 경고", "level": 1, "level_name": "주의", "value": 1480.054, "display": "1.48조", "date": "2026-09-01", "basis": "9월", "prev_value": 1453.832, "prev_date": "2026-08-01", "note": "증가율 31.4% (5월 53.7%에서 하락)", "missing": false}]}, "history": [{"date": "2026-11-03", "score": 9, "phase": "주의", "stage": 3}, {"date": "2026-11-04", "score": 9, "phase": "주의", "stage": 3}, {"date": "2026-11-05", "score": 10, "phase": "주의", "stage": 3}, {"date": "2026-11-06", "score": 9, "phase": "주의", "stage": 3}, {"date": "2026-11-07", "score": 10, "phase": "주의", "stage": 3}]}</script>
+<script>
+const P = JSON.parse(document.getElementById('payload').textContent);
+const D = P.data, H = P.history;
+const LV = {0:['●','정상'],1:['▲','주의'],2:['■','경고']};
+const PH = {'안정':0,'주의':1,'경고':2};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function toggleTheme(){
+  const r=document.documentElement; const cur=r.getAttribute('data-theme');
+  const dark = cur==='dark';
+  r.setAttribute('data-theme', dark?'light':'dark'); localStorage.setItem('theme', dark?'light':'dark');
+}
+const saved = localStorage.getItem('theme'); if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+$('date').textContent = D.run_date.replace(/-/g,'.') + ' 기준 · 매일 07:00 갱신';
+const pl = PH[D.phase]; $('phase-card').classList.add('lv'+pl); $('phase').innerHTML = `<span class="badge lv${pl}" style="font-size:15px;padding:4px 12px">${LV[pl][0]} ${D.phase}</span>`;
+$('score').textContent = D.score;
+$('layers').innerHTML = ['경기','유동성','심리'].map(L => `<div><b>${L}</b><span>${esc(D.layer_labels[L])}</span></div>`).join('');
+$('alerts').innerHTML = D.alerts.map(a => `<div class="alert">⚠ ${esc(a.name)}<small>${esc(a.meaning)}</small></div>`).join('');
+
+const stageNames = ['TGA 급증','RRP 충분','RRP 바닥','자금 부족','회복'];
+$('steps').innerHTML = stageNames.map((n,i) => `<div class="${D.liquidity_stage===i+1?'on s'+(i+1):''}"><b>${i+1}</b>${n}</div>`).join('');
+$('stage-note').textContent = (D.liquidity_stage ? D.liquidity_stage+'단계 · ' : '단계 미해당 · ') + D.liquidity_note;
+
+$('changes').innerHTML = D.changes.length ? D.changes.map(c => `<li>${esc(c)}</li>`).join('') : '<li class="note">없음 (레벨 변화·눈에 띄는 변동 없음)</li>';
+$('watch').innerHTML = D.watch.length ? D.watch.map(c => `<li>${esc(c)}</li>`).join('') : '<li class="note">특이 일정 없음</li>';
+
+$('sections').innerHTML = ['경기','유동성','심리'].map(L => {
+  const tiles = D.signals.filter(s => s.layer===L).map(s => `
+    <div class="tile lv${s.level}" onclick="this.classList.toggle('open')">
+      <div class="n">${esc(s.name)}<em>${esc(s.basis)}</em></div>
+      <div class="v">${esc(s.display)}</div>
+      <span class="badge lv${s.level}">${LV[s.level][0]} ${LV[s.level][1]}</span>${s.note?'<div class="s">'+esc(s.note)+'</div>':''}
+      <div class="d"><b>${esc(s.full)}</b> — ${esc(s.desc)}<br>기준선: ${esc(s.threshold)}${s.prev_value!=null?'<br>직전: '+esc(fmtPrev(s))+' ('+esc(s.prev_date||'')+')':''}</div>
+    </div>`).join('');
+  return `<section class="card"><h2>${L}<small>${esc(D.layer_labels[L])}</small></h2><div class="grid">${tiles}</div></section>`;
+}).join('');
+function fmtPrev(s){ const v=s.prev_value; if (v==null) return '-'; if (['tga','reserves','margin_debt'].includes(s.key)) return (v/1000).toFixed(2)+'조'; if (s.key==='rrp') return (v*10).toFixed(v<1?1:0)+'억'; return typeof v==='number'? (Math.round(v*100)/100).toString() : v; }
+
+// ---- 30일 점수 차트 (단일 계열 막대, 상태 구간 가이드선) ----
+(function(){
+  const el=$('chart'); const W=480, Hh=120, padL=24, padB=18, padT=8; const maxY=24;
+  const rows=H.length?H:[{date:D.run_date,score:D.score,phase:D.phase}];
+  const n=Math.max(rows.length,1); const bw=Math.max(4,Math.min(18,(W-padL-8)/n-3));
+  const x=i=>padL+ (W-padL-8)*(i+0.5)/n; const y=v=>padT+(Hh-padB-padT)*(1-v/maxY);
+  let g='';
+  [[6,'주의'],[12,'경고']].forEach(([v,t])=>{ g+=`<line x1="${padL}" x2="${W-4}" y1="${y(v)}" y2="${y(v)}" stroke="var(--border)" stroke-dasharray="3 3"/><text x="${W-4}" y="${y(v)-3}" font-size="10" fill="var(--muted-fg)" text-anchor="end">${t} ${v}</text>`; });
+  g+=`<line x1="${padL}" x2="${W-4}" y1="${y(0)}" y2="${y(0)}" stroke="var(--border)"/>`;
+  rows.forEach((r,i)=>{ const h=Math.max(1,y(0)-y(r.score)); g+=`<rect data-i="${i}" x="${x(i)-bw/2}" y="${y(r.score)}" width="${bw}" height="${h}" rx="3" fill="var(--primary)"/>`; });
+  rows.forEach((r,i)=>{ if(i===0||i===rows.length-1||i%7===0) g+=`<text x="${x(i)}" y="${Hh-4}" font-size="10" fill="var(--muted-fg)" text-anchor="middle">${r.date.slice(5).replace('-','/')}</text>`; });
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${Hh}" preserveAspectRatio="none">${g}</svg><div class="tip" id="tip"></div>`;
+  const tip=$('tip'); const svg=el.querySelector('svg');
+  const show=e=>{ const t=e.target.closest('rect'); if(!t){tip.style.display='none';return;} const r=rows[+t.dataset.i]; const b=el.getBoundingClientRect(); const rb=t.getBoundingClientRect();
+    tip.textContent=`${r.date.slice(5)} · ${r.score}점 ${r.phase}`; tip.style.left=(rb.left-b.left+rb.width/2)+'px'; tip.style.top=(rb.top-b.top)+'px'; tip.style.display='block'; };
+  svg.addEventListener('mousemove',show); svg.addEventListener('click',show); svg.addEventListener('mouseleave',()=>tip.style.display='none');
+})();
+
+$('foot').innerHTML = `생성 ${esc(D.generated_at)} (KST) · 기준일은 지표마다 다름(타일에 표시) · 점수: 정상 0 · 주의 1 · 경고 2를 12개 지표에 매겨 합산 · 투자 조언 아님`;
+</script>
+</body>
+</html>
